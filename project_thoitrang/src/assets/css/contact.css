@@ -1,0 +1,105 @@
+/* contact */
+
+/* Tổng quan */
+.contact-page {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.contact-subtitle {
+  font-size: 18px;
+  color: #666666;
+}
+
+/* Bố cục */
+.contact-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-left iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form liên hệ */
+.contact-right {
+  flex: 1;
+  min-width: 350px;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Khoảng cách giữa các trường */
+  max-width: 500px;
+  margin: 0 auto; /* Căn giữa form */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: none; /* Ngăn người dùng thay đổi kích thước */
+  height: 120px; /* Đặt chiều cao cố định */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-submit {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,105 @@
+/* ------------------------ PRODUCT PAGE ------------------------ */
+.products-content-container {
+  margin-bottom: -200px;
+}
+.product-item {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-item:hover {
+  transform: scale(1.05); /* Phóng to sản phẩm */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+
+.product-item img:hover {
+  transform: scale(1.1); /* Phóng to ảnh sản phẩm */
+  opacity: 0.9; /* Làm mờ nhẹ ảnh */
+}
+
+.product-item a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.product-item a:hover {
+  color: #007bff; /* Đổi màu chữ khi hover */
+}
+
+.product-item .product-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.product-item .product-info p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.product-item .product-info p:hover {
+  color: #007bff; /* Đổi màu chữ khi hover */
+}
+
+.product-item .product-price {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 5px;
+}
+
+.product-item .product-price span {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: line-through; /* Gạch ngang giá cũ */
+  color: #999;
+  margin-left: 10px;
+}
+
+/* Hiệu ứng hover cho ảnh sản phẩm nhỏ */
+.product-images-items img {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-images-items img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hiệu ứng hover cho nút thêm vào giỏ hàng */
+.main-btn {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-btn:hover {
+  background-color: #ff3b2f;
+  transform: scale(1.05);
+}
+
+/* Hiệu ứng hover cho số lượng */
+.product-detail-right-quantity-input i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.product-detail-right-quantity-input i:hover {
+  color: #ff6f61;
+}

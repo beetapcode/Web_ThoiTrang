@@ -1,0 +1,18 @@
+.admin-section {
+  margin-bottom: 30px;
+}
+
+.admin-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  text-align: center;
+}
+
+button {
+  margin: 0 5px;
+}

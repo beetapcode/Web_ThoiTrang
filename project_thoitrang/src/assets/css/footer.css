@@ -1,0 +1,89 @@
+/* Footer tổng thể */
+footer {
+    background-color: #1a1a1a; /* Nền tối */
+    color: #fff; /* Màu chữ sáng */
+    padding: 40px 20px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .row-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Footer item */
+.footer-item {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+.footer-item p:first-child {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #fff;
+    text-transform: uppercase; /* Chữ in hoa */
+}
+
+.footer-item p {
+    font-weight: lighter;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #ccc; /* Màu chữ nhạt hơn */
+}
+
+.footer-item p a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-item p a:hover {
+    color: #007bff; /* Hiệu ứng hover */
+}
+
+/* Footer icons */
+.footer-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-icons a {
+    color: #ccc;
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: #007bff;
+    transform: scale(1.2); /* Hiệu ứng phóng to khi hover */
+}
+
+/* Footer bottom */
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.footer-bottom a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}

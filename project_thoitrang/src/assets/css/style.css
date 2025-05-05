@@ -1,0 +1,519 @@
+/* ------------------------ GLOBAL VARIABLES ------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Sedan+SC&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --header-height: 35px;
+    --main-bg: #d5d5d5;
+    --main-transition: all 0.3s ease;
+    --main-color: whitesmoke;
+    --main-font-weight: 500;
+}
+
+/* ------------------------ RESET ------------------------ */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+input {
+    outline: none;
+}
+
+/* ------------------------ LAYOUT ------------------------ */
+.container {
+    max-width: 1240px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.row-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.row-grid-oneitem {
+    grid-template-columns: 100%;
+}
+
+.p-to-top {
+    padding-top: calc(var(--header-height) + 20px);
+}
+
+/* ------------------------ HEADER ------------------------ */
+header {
+    height: var(--header-height);
+    border-bottom: 1px solid gray;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 55px;
+    background-color: var(--main-bg);
+    transition: transform 0.3s ease-in-out;
+}
+
+header .row-flex {
+    align-items: center;
+}
+
+.header-logo img {
+    width: 150px;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+.header-logo img:hover {
+    scale: 1.1;
+}
+
+.header-nav {
+    border-right: whitesmoke solid 1px;
+}
+
+.header-nav nav ul {
+    display: flex;
+    padding: 0 20px;
+    font-size: 21px;
+}
+
+.header-nav nav ul li {
+    padding: 0 10px;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.header-nav nav ul li:hover {
+    border-bottom: #000 solid 2px;
+    scale: 1.1;
+    color: #707ff1;
+}
+
+.header-search {
+    position: relative;
+}
+
+.header-search i {
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.header-search input {
+    height: 33px;
+    width: 400px;
+    border: 1px solid black;
+    padding-left: 25px;
+    border-radius: 3px;
+}
+
+.header-cart i {
+    font-size: 33px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.header-cart i::after {
+    position: absolute;
+    content: attr(number);
+    width: 14px;
+    height: 14px;
+    background-color: red; /* Màu nền đỏ */
+    border-radius: 50%;
+    right: -5px;
+    top: -5px;
+    color: white; /* Màu chữ trắng */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    visibility: hidden; /* Ẩn mặc định */
+}
+
+.header-cart i[number]:not([number=""])::after {
+    visibility: visible; /* Hiển thị khi có giá trị */
+}
+
+.header-user i {
+    font-size: 33px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.header-user i:hover {
+    scale: 1.3;
+    color: #707ff1;
+}
+
+
+
+/* ------------------------ SLIDER ------------------------ */
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Hiệu ứng chuyển động mượt */
+}
+
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    transition: opacity 0.5s ease-in-out; /* Hiệu ứng mờ dần */
+}
+
+.slider-container img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Dot container */
+.dot-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.dot:hover {
+    background-color: #666;
+}
+
+/* ------------------------ SLIDER ------------------------ */
+.slider-trangsp {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px; /* Chiều cao của slider */
+}
+
+.slider-trangsp .aspect-ratio-169 {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Hiệu ứng chuyển động mượt */
+    width: 100%;
+    height: 100%;
+}
+
+.slider-trangsp .aspect-ratio-169 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    display: none; /* Ẩn tất cả ảnh */
+    transition: opacity 0.5s ease-in-out; /* Hiệu ứng mờ dần */
+}
+
+.slider-trangsp .aspect-ratio-169 img.active {
+    display: block; /* Hiển thị ảnh đang active */
+    opacity: 1;
+}
+
+/* Dot container */
+.slider-trangsp .dot-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.slider-trangsp .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-trangsp .dot.active {
+    background-color: #333;
+}
+
+.slider-trangsp .dot:hover {
+    background-color: #666;
+}
+
+------------------------ PRODUCT HOVER EFFECT ------------------------
+.product-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Phóng to sản phẩm */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+
+.product-item img:hover {
+    transform: scale(1.1); /* Phóng to ảnh sản phẩm */
+    opacity: 0.9; /* Làm mờ nhẹ ảnh */
+}
+
+.product-item a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.product-item a:hover {
+    color: #007bff; /* Đổi màu chữ khi hover */
+}
+
+.product-item .product-info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.product-item .product-info p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.product-item .product-info p:hover {
+    color: #007bff; /* Đổi màu chữ khi hover */
+}
+
+.product-item .product-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+
+.product-item .product-price span {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-decoration: line-through; /* Gạch ngang giá cũ */
+    color: #999;
+    margin-left: 10px;
+}
+
+/* Hiệu ứng hover cho ảnh sản phẩm nhỏ */
+.product-images-items img {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-images-items img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hiệu ứng hover cho nút thêm vào giỏ hàng */
+.main-btn {
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-btn:hover {
+  background-color: #ff3b2f;
+  transform: scale(1.05);
+}
+
+/* Hiệu ứng hover cho số lượng */
+.product-detail-right-quantity-input i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.product-detail-right-quantity-input i:hover {
+  color: #ff6f61;
+}
+
+/* ------------------------ AOS ANIMATIONS ------------------------ */
+/* Hiệu ứng fade-in */
+[data-aos="fade-right"],
+[data-aos="fade-left"],
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+[data-aos="fade-right"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-aos="fade-left"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Hiệu ứng zoom-in */
+[data-aos="zoom-in"] {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+[data-aos="zoom-in"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hiệu ứng flip-left */
+[data-aos="flip-left"] {
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+[data-aos="flip-left"].aos-animate {
+  opacity: 1;
+  transform: rotateY(0);
+}
+
+/* Hiệu ứng hover cho hình ảnh */
+.image-grid img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hiệu ứng hover cho danh sách bộ sưu tập */
+.list-bosuutap img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-bosuutap img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------ RESPONSIVE ------------------------ */
+@media only screen and (max-width: 768px) {
+    .row-flex,
+    .row-grid {
+        padding: 0 12px;
+    }
+
+    header .row-flex {
+        height: 70px;
+    }
+
+    .header-nav {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100vw;
+        background-color: gray;
+        color: var(--main-color);
+        transition: var(--main-transition);
+    }
+
+    .header-nav.active {
+        top: var(--header-height);
+    }
+
+    .header-search {
+        display: none;
+    }
+
+    .header-logo {
+        display: none;
+    }
+
+    .header-cart,
+    .header-user {
+        margin-bottom: 20px;
+    }
+
+    .slider {
+        height: 300px; /* Giảm chiều cao slider trên màn hình nhỏ */
+    }
+
+    .product-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .slider {
+        height: 250px; /* Giảm chiều cao slider hơn nữa */
+    }
+
+    .product-item .product-info p {
+        font-size: 1.2rem; /* Giảm kích thước chữ trên màn hình nhỏ */
+    }
+
+    .product-item .product-price {
+        font-size: 1.4rem;
+    }
+}
